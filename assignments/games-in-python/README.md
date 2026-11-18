@@ -17,10 +17,9 @@ Prepare uma rodada selecionando uma palavra secreta da lista fornecida e inicial
 
 O programa concluído deve:
 
-- Selecionar aleatoriamente uma palavra de uma lista predefinida usando o módulo `random`.
-- Inicializar uma coleção para registrar as letras já adivinhadas.
-- Definir o limite de tentativas incorretas.
-- Exibir o progresso da palavra, mostrando as letras descobertas e espaços para as letras restantes, como `_ _ _`.
+- Selecionar uma palavra aleatória da lista `words` usando `random.choice` e armazená-la em `secret_word`.
+- Inicializar `guessed_letters` para acompanhar as letras adivinhadas, `incorrect_guesses` para contar os erros e `max_incorrect` para definir o limite de erros.
+- Exibir cada letra já adivinhada e usar `_` para representar cada letra ainda não descoberta, como `_ _ _`.
 
 ### 🛠️ Implementar as Rodadas de Adivinhação
 
@@ -32,8 +31,8 @@ Implemente o loop principal para receber palpites, atualizar o estado do jogo e 
 
 O programa concluído deve:
 
-- Solicitar ao jogador um palpite de letra e verificar se ela aparece na palavra secreta.
-- Atualizar e exibir o progresso após cada palpite.
-- Contabilizar e informar as tentativas incorretas restantes.
-- Encerrar quando a palavra for descoberta ou o limite de tentativas incorretas for atingido.
-- Exibir uma mensagem de vitória ou derrota e revelar a palavra secreta em caso de derrota.
+- Solicitar um palpite de letra a cada rodada e verificar se a letra aparece em `secret_word`.
+- Registrar as letras corretas em `guessed_letters` e incrementar `incorrect_guesses` quando o palpite estiver errado.
+- Exibir o progresso da palavra e quantas tentativas incorretas ainda restam após cada palpite.
+- Encerrar a partida quando todas as letras forem descobertas ou `incorrect_guesses` atingir `max_incorrect`.
+- Exibir uma mensagem de vitória ou derrota e revelar `secret_word` em caso de derrota.
